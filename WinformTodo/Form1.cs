@@ -46,7 +46,7 @@ namespace WinformTodo
 
             // take todo and insert into my list
             TaskList.Add(myTodo);
-
+            fpTasks.Controls.Add(new TaskControl(myTodo));
             UpdateListBox();
 
             ClearForm();
@@ -55,7 +55,7 @@ namespace WinformTodo
         public void UpdateListBox()
         {
             // clear the contents of the list box
-            lbTaskList.Items.Clear();
+            //lbTaskList.Items.Clear();
 
             // transform the list
             var list = TaskList
@@ -67,7 +67,7 @@ namespace WinformTodo
             // read in the new contents
             for (int i = 0; i < list.Count; i++)
             {
-                lbTaskList.Items.Add(list[i].ToString());
+                //lbTaskList.Items.Add(list[i].ToString());
             }
 
             // cleanup if required
@@ -93,12 +93,12 @@ namespace WinformTodo
             }
         }
 
-        private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
         {
             //MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}");
 
-            int selectedIndex = lbTaskList.SelectedIndex;
-            string selectedItem = (string)lbTaskList.SelectedItem;
+            //int selectedIndex = lbTaskList.SelectedIndex;
+            //string selectedItem = (string)lbTaskList.SelectedItem;
 
             if (selectedIndex == -1)
             {
@@ -125,6 +125,6 @@ namespace WinformTodo
             }
             //process the data
 
-        }
+        }*/
     }
 }
